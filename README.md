@@ -6,7 +6,7 @@
   - Displaying a list of products with name, image, price, ratings
   - Implemented pagination to load more products.
 
-- **Product Searching**
+- **Search Functionality**
   - Implemented searching field for searching products 
 
 - **Product API Integration:**
