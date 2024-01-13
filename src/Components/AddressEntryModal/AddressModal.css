@@ -25,7 +25,7 @@
    padding:2rem;
 }
 
-.addressMainContent form{
+.addressMainContent form div{
    display: grid;
    grid-template-columns: auto auto;
    gap:1rem
@@ -36,12 +36,12 @@
    padding:1rem
 }
 
-.addressMainContent button{
+.addressMainContent form button, .summaryconfirm{
    font-size: larger;
    border-radius: 0.5rem;
    cursor: pointer;
    padding:1rem;
-
+   margin-top: 2rem;
    background-color: rgb(182, 248, 203);
 }
 

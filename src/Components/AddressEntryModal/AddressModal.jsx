@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
    myCartActionTypes,
    myCartProductActionType,
- } from "../../Redux/MyCart/MyCartActionTypes";
- import { alterTheValueOfMyCart } from "../../Redux/MyCart/MyCartThunkMiddleware";
+} from "../../Redux/MyCart/MyCartActionTypes";
+import { alterTheValueOfMyCart } from "../../Redux/MyCart/MyCartThunkMiddleware";
 import { useNavigate } from 'react-router-dom';
 
 const AddressModal = (props) => {
@@ -16,8 +16,8 @@ const AddressModal = (props) => {
    const navigate = useNavigate();
 
    // Redux dispatch and selector hooks
-  const dispatch = useDispatch();
-  const cartState = useSelector((state) => state.myCart.myProductsData);
+   const dispatch = useDispatch();
+   const cartState = useSelector((state) => state.myCart.myProductsData);
    const myCartArray = useSelector((state) => state.myCart.myProductsData);
    let totalDiscountedPrice = 0;
    myCartArray.forEach((data) => {
@@ -31,37 +31,39 @@ const AddressModal = (props) => {
       setSummaryFlag(true)
    }
 
-   const getTOproduct = ()=>{
+   const getTOproduct = () => {
       dispatch(
          alterTheValueOfMyCart(
-           {},
-           myCartProductActionType.REMOVE,
-           cartState,
-           myCartActionTypes.ALTER_PRODUCT_TO_MY_CART
+            {},
+            myCartProductActionType.REMOVE,
+            cartState,
+            myCartActionTypes.ALTER_PRODUCT_TO_MY_CART
          )
-       );
-       navigate(-2)
-       setActiveAddressModal(false);
+      );
+      navigate(-2)
+      setActiveAddressModal(false);
    }
    return (
       <>
          <div className='addressContainer' onClick={navigateToPrevSection}>
             {!summaryFlag && <div className='addressMainContent' onClick={(e) => e.stopPropagation()}>
                <div className='addressLabel'>Enter your details to Confirm the Order</div>
-               <form>
-                  <input name="name" placeholder="Name" type="name" onChange={(e) => {
-                     e.preventDefault();
-                     setName(e.target.value)
-                  }} />
-                  <input name="address" placeholder="Address" type="text" required/>
-                  <input name="unit" placeholder="Unit number" type="text" />
-                  <input name="city" placeholder="City" type="text" required/>
-                  <input name="state" placeholder="State" type="text" required/>
-                  <input name="country" placeholder="Country" type="text" required/>
-                  <input name="postcode" placeholder="Postcode" type="text" required/>
-                  <input name="mobile" placeholder="Phone" type="phone" required/>
+               <form onSubmit={placetheOrder}>
+                  <div>
+                     <input name="name" placeholder="Name" type="name" required={true} onChange={(e) => {
+                        e.preventDefault();
+                        setName(e.target.value)
+                     }} />
+                     <input name="address" placeholder="Address" type="text" required={true} />
+                     <input name="unit" placeholder="Unit number" type="text" />
+                     <input name="city" placeholder="City" type="text" required={true} />
+                     <input name="state" placeholder="State" type="text" required={true} />
+                     <input name="country" placeholder="Country" type="text" required={true} />
+                     <input name="postcode" placeholder="Postcode" type="text" required={true} />
+                     <input name="mobile" placeholder="Phone" type="phone" required={true} />
+                  </div>
+                  <button type='submit'>Place Order</button>
                </form>
-               <button onClick={placetheOrder}>Place Order</button>
             </div>}
             {summaryFlag && <div className='addressMainContent' onClick={(e) => e.stopPropagation()}>
                <div>
