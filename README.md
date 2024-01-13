@@ -6,6 +6,9 @@
   - Displaying a list of products with name, image, price, ratings
   - Implemented pagination to load more products.
 
+- **Product Searching**
+  - Implemented searching field for searching products 
+
 - **Product API Integration:**
   - Fetching product data from the [Dummy JSON](https://dummyjson.com/docs/products) .
   - Implemented loader.
