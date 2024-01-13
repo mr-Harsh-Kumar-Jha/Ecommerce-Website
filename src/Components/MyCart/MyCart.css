@@ -1,0 +1,138 @@
+.myCartWrapper {
+    width: 80%;
+    margin: 0rem auto;
+    min-height: 100%;
+}
+
+.cartHeadigContainer{
+   display: flex;
+   justify-content: space-between;
+}
+
+.cartHeadigContainer button{
+   cursor: pointer;
+   margin-top: 1rem;
+   height:4rem;
+   width:12rem;
+}
+
+.cartHeadigContainer button:hover{
+   background-color: aliceblue;
+}
+
+.myCartWrapper .nestedMyCartWrapper {
+    margin: 1rem 0;
+}
+
+.myCartWrapper .noCartProducts {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.myCartWrapper .noCartProducts .myCartOhSnap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myCartWrapper .noCartProducts .myCartOhSnap img {
+    width: 250px;
+    height: 250px;
+}
+
+.myCartWrapper .noCartProducts .myCartOhSnap h2 {
+    width: 100%;
+    height: 100%;
+    margin: 2rem 0;
+    font-weight: 500;
+    display: flex;
+}
+
+.myCartWrapper .noCartProducts .myCartOhSnap h2 span {
+    cursor: pointer;
+}
+
+.myCartWrapper .myCartHeading,
+.myCartWrapper .myCartPriceSummary {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.myCartWrapper .myCartHeading {
+    border-bottom: 2px solid grey;
+}
+
+.myCartWrapper .priceSummaryAndIconMerger {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid grey;
+    margin: 3rem 0;
+}
+
+.myCartWrapper .priceSummaryAndIconMerger svg {
+    font-size: 20px;
+    margin: 0.8rem 0rem 0rem 0.5rem;
+}
+
+.myCartWrapper .myCartPriceSummary {
+    margin: 0rem;
+}
+
+.myCartWrapper .priceSummaryHeading,
+.myCartWrapper .priceSummaryRightFloater {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 0 0 0.5rem 0 !important;
+}
+
+.myCartWrapper .priceSummaryRightFloater {
+    text-align: end;
+}
+
+.myCartWrapper .priceSummaryTotalSaving {
+    color: green;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 0 0.5rem 0 !important;
+    text-align: end;
+}
+
+.myCartWrapper .underline {
+    border-bottom: 2px solid grey;
+}
+
+.myCartWrapper .myCartSavePrice {
+    font-size: 20px;
+    font-weight: 500;
+    color: green;
+    margin: 0.5rem 0 2rem 0;
+    padding-bottom: 2rem;
+}
+
+@media only screen and (max-width:500px) {
+    .myCartWrapper {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .myCartWrapper .myCartSavePrice {
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+
+    .myCartWrapper .priceSummaryAndIconMerger {
+        margin: 1.5rem 0;
+    }
+
+    .myCartWrapper .nestedMyCartWrapper {
+        border: 2px solid grey;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .myCartWrapper .myCartHeading {
+        margin: 1rem 0 1.5rem 0;
+    }
+}
